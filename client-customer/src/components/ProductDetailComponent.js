@@ -26,11 +26,10 @@ class ProductDetail extends Component {
                 <img src={"data:image/jpg;base64," + prod.image} width="400px" height="400px" alt="" />
               ):(
                 <img src={"data:image/jpg;base64," + this.state.imgSelected} width="400px" height="400px" alt="" />
-
               )}
               <div className="align-center">
-                {prod.imageDetails.map((image,index)=>
-                <img key={index} src={image} width="100px" height="100px" alt="" onClick={()=>this.setState({imgSelected:image})}/>)}
+                {prod.imageDetails.map((image,index)=>(
+                <img key={index} src={"data:image/jpg;base64," + image} width="100px" height="100px" alt="" onClick={()=>this.setState({imgSelected:image})}/>))}
               </div>
               </div>
             <figcaption>

@@ -24,7 +24,12 @@ class Product extends Component {
           <td>{new Date(item.cdate).toLocaleString()}</td>
           <td>{item.category.name}</td>
           <td><img src={"data:image/jpg;base64," + item.image} width="100px" height="100px" alt="" /></td>
-          <td>  {item.imageDetails.length > 0 ? (item.imageDetails.map((image, index) => <img key={index} src={"data:image/jpg;base64," + image} width="100px" heigh="100px" alt="" /> )):(<span>n/a</span>)}  </td>
+          <td> 
+           {item.imageDetails.length > 0 ? (
+            item.imageDetails.map((image, index) => ( 
+            <img key={index} src={"data:image/jpg;base64," + image} width="100px" heigh="100px" alt="" /> ))
+            ) : (<span>n/a</span>)}  
+            </td>
         </tr>
       );
     });

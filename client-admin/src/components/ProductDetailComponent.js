@@ -82,7 +82,7 @@ class ProductDetail extends Component {
     const category = this.state.cmbCategory;
     const image = this.state.imgProduct.replace(/^data:image\/[a-z]+;base64,/, ''); // remove "data:image/...;base64,"
     const imageDetails = this.state.imgDetails.map((img) => img.replace(/^data:image\/[a-z]+;base64,/, '')); // remove "data:image/...;base64,"
-    if (name && price && category && image) {
+    if (name && price && category && image && imageDetails.length > 0) {
       const prod = { name: name, price: price, category: category, image: image, imageDetails:imageDetails };
       this.apiPostProduct(prod);
     } else {
@@ -97,7 +97,7 @@ class ProductDetail extends Component {
     const category = this.state.cmbCategory;
     const image = this.state.imgProduct.replace(/^data:image\/[a-z]+;base64,/, ''); // remove "data:image/...;base64,"
     const imageDetails = this.state.imgDetails.map((img) => img.replace(/^data:image\/[a-z]+;base64,/, '')); // remove "data:image/...;base64,"
-    if (id && name && price && category && image) {
+    if (name && price && category && image && imageDetails.length > 0) {
       const prod = { name: name, price: price, category: category, image: image, imageDetails:imageDetails };
       this.apiPutProduct(id, prod);
     } else {
@@ -202,7 +202,7 @@ class ProductDetail extends Component {
         return new Promise((resolve) => {
           const reader = new FileReader();
           reader.onload = (evt) => {
-            newImages.pust(evt.target.result);
+            newImages.push(evt.target.result);
             resolve();
           };
           reader.readAsDataURL(file);
