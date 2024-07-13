@@ -30,7 +30,7 @@ class Statistics extends Component{
                         <tr>
                             <td align="right">No.Products</td>
                             <td></td>
-                            <td>{this.state.noProduct}</td>
+                            <td>{this.state.noProducts}</td>
                         </tr>
                         <tr>
                             <td align="right">No.Orders</td>
@@ -76,7 +76,7 @@ class Statistics extends Component{
             const result = res.data;
             this.setState({
                 noCategories:result.noCategories,
-                noProduct:result.noProduct,
+                noProducts:result.noProducts,
                 noOrders:result.noOrders,
                 noOrdersPending:result.noOrdersPending,
                 noOrdersApproved:result.noOrdersApproved,
