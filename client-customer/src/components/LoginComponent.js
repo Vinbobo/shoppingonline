@@ -16,22 +16,22 @@ class Login extends Component {
   render() {
     return (
       <div className="align-center">
-        <h2 className="text-center">CUSTOMER LOGIN</h2>
+        <h2 className="text-center">ĐĂNG NHẬP</h2>
         <form>
           <table className="align-center">
             <tbody>
               <tr>
-                <td>Username</td>
+                <td>Tên tài khoản</td>
                 <td><input type="text" value={this.state.txtUsername} onChange={(e) => { this.setState({ txtUsername: e.target.value }) }} /></td>
               </tr>
               <tr>
-                <td>Password</td>
+                <td>Mật khẩu</td>
                 <td><input type="password" value={this.state.txtPassword} onChange={(e) => { this.setState({ txtPassword: e.target.value }) }} /></td>
               </tr>
               <tr>
                 <td></td>
-                <td><input type="submit" value="LOGIN" onClick={(e) => this.btnLoginClick(e)} /></td>
-                <td><Link to='/resetpwd'>Forgot Password</Link></td>
+                <td><input type="submit" value="Đăng nhập" onClick={(e) => this.btnLoginClick(e)} /></td>
+                <td><Link to='/resetpwd'>Quên mật khẩu?</Link></td>
               </tr>
             </tbody>
           </table>
@@ -49,7 +49,7 @@ class Login extends Component {
       this.apiLogin(account);
     } else {
       // alert('Please input username and password');
-      toast.warning('Please input username and password');
+      toast.warning('Hãy nhập tên tài khoản và mật khẩu!!!');
     }
   }
   // apis
@@ -61,7 +61,7 @@ class Login extends Component {
         this.context.setCustomer(result.customer);
         this.props.navigate('/home');
         localStorage.setItem('customer_token',result.token);
-        toast.success('Welcome to shoppingonline');
+        toast.success('Chào mừng bạn đến với FashionSốp');
       } else {
         // alert(result.message);
         toast.error(result.message);

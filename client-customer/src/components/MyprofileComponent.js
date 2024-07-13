@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import { Navigate } from 'react-router-dom';
 import MyContext from '../contexts/MyContext';
-
+import {toast} from 'react-toastify';
 class Myprofile extends Component {
   static contextType = MyContext; // using this.context to access global state
   constructor(props) {
@@ -19,24 +19,24 @@ class Myprofile extends Component {
     if (this.context.token === '') return (<Navigate replace to='/login' />);
     return (
       <div className="align-center">
-        <h2 className="text-center">MY PROFILE</h2>
+        <h2 className="text-center">THÔNG TIN CÁ NHÂN</h2>
         <form>
           <table className="align-center">
             <tbody>
               <tr>
-                <td>Username</td>
+                <td>Tên tài khoản</td>
                 <td><input type="text" value={this.state.txtUsername} onChange={(e) => { this.setState({ txtUsername: e.target.value }) }} /></td>
               </tr>
               <tr>
-                <td>Password</td>
+                <td>Mật khẩu</td>
                 <td><input type="password" value={this.state.txtPassword} onChange={(e) => { this.setState({ txtPassword: e.target.value }) }} /></td>
               </tr>
               <tr>
-                <td>Name</td>
+                <td>Họ Tên</td>
                 <td><input type="text" value={this.state.txtName} onChange={(e) => { this.setState({ txtName: e.target.value }) }} /></td>
               </tr>
               <tr>
-                <td>Phone</td>
+                <td>SĐT</td>
                 <td><input type="tel" value={this.state.txtPhone} onChange={(e) => { this.setState({ txtPhone: e.target.value }) }} /></td>
               </tr>
               <tr>
@@ -45,7 +45,7 @@ class Myprofile extends Component {
               </tr>
               <tr>
                 <td></td>
-                <td><input type="submit" value="UPDATE" onClick={(e) => this.btnUpdateClick(e)} /></td>
+                <td><input type="submit" value="CẬP NHẬT THÔNG TIN" onClick={(e) => this.btnUpdateClick(e)} /></td>
               </tr>
             </tbody>
           </table>
@@ -85,10 +85,12 @@ class Myprofile extends Component {
     axios.put('/api/customer/customers/' + id, customer, config).then((res) => {
       const result = res.data;
       if (result) {
-        alert('OK BABY!');
+        // alert('OK BABY!');
+        toast.success('Cập nhật thành công thông tin cá nhân!!');
         this.context.setCustomer(result);
       } else {
-        alert('SORRY BABY!');
+        // alert('SORRY BABY!');
+        toast.warning('Không thành công');
       }
     });
   }

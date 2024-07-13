@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import withRouter from '../utils/withRouter';
 import MyContext from '../contexts/MyContext';
-
+import {toast} from 'react-toastify';
 class ProductDetail extends Component {
   static contextType = MyContext; // using this.context to access global state
 
@@ -41,24 +41,24 @@ class ProductDetail extends Component {
                       <td>{prod._id}</td>
                     </tr>
                     <tr>
-                      <td align="right">Name:</td>
+                      <td align="right">Tên sản phẩm:</td>
                       <td>{prod.name}</td>
                     </tr>
                     <tr>
-                      <td align="right">Price:</td>
+                      <td align="right">Giá:</td>
                       <td>{prod.price}</td>
                     </tr>
                     <tr>
-                      <td align="right">Category:</td>
+                      <td align="right">Loại sản phẩm:</td>
                       <td>{prod.category.name}</td>
                     </tr>
                     <tr>
-                      <td align="right">Quantity:</td>
+                      <td align="right">Số lượng:</td>
                       <td><input type="number" min="1" max="99" value={this.state.txtQuantity} onChange={(e) => { this.setState({ txtQuantity: e.target.value }) }} /></td>
                     </tr>
                     <tr>
                       <td></td>
-                      <td><input type="submit" value="ADD TO CART" onClick={(e) => this.btnAdd2CartClick(e)} /></td>
+                      <td><input type="submit" value="THÊM VÀO GIỎ HÀNG" onClick={(e) => this.btnAdd2CartClick(e)} /></td>
                     </tr>
                   </tbody>
                 </table>
@@ -96,9 +96,11 @@ class ProductDetail extends Component {
           mycart[index].quantity += quantity;
         }
         this.context.setMycart(mycart);
-        alert('OK BABY!');
+        // alert('OK BABY!');
+        toast.success('Sản phẩm đã được thêm vào giỏ hàng!!!')
       } else {
-        alert('Please input quantity');
+        // alert('Please input quantity');
+        toast.warning('Hãy nhập số lượng!!!');
       }
     }
 }

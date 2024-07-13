@@ -76,7 +76,7 @@ class Statistics extends Component{
             const result = res.data;
             this.setState({
                 noCategories:result.noCategories,
-                noProducts:result.noProducts,
+                noProduct:result.noProduct,
                 noOrders:result.noOrders,
                 noOrdersPending:result.noOrdersPending,
                 noOrdersApproved:result.noOrdersApproved,

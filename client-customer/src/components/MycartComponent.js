@@ -3,6 +3,8 @@ import MyContext from '../contexts/MyContext';
 import CartUtil from '../utils/CartUtil';
 import axios from 'axios';
 import withRouter from '../utils/withRouter';
+import {toast} from 'react-toastify';
+
 class Mycart extends Component {
   static contextType = MyContext; // using this.context to access global state
   render() {
@@ -23,7 +25,7 @@ class Mycart extends Component {
     });
     return (
       <div className="align-center">
-        <h2 className="text-center">ITEM LIST</h2>
+        <h2 className="text-center">GIỎ HÀNG</h2>
         <table className="datatable" border="1">
           <tbody>
             <tr className="datatable">
@@ -59,7 +61,7 @@ class Mycart extends Component {
         }
     }
     lnkCheckoutClick() {
-        if (window.confirm('ARE YOU SURE?')) {
+        if (window.confirm('Bạn có muốn thanh toán')) {
           if (this.context.mycart.length > 0) {
             const total = CartUtil.getTotal(this.context.mycart);
             const items = this.context.mycart;
@@ -70,7 +72,8 @@ class Mycart extends Component {
               this.props.navigate('/login');
             }
           } else {
-            alert('Your cart is empty');
+            // alert('Giỏ hàng trống!!!');
+            toast.warning('Giỏ hàng trống');
           }
         }
     }
@@ -81,11 +84,13 @@ class Mycart extends Component {
         axios.post('/api/customer/checkout', body, config).then((res) => {
           const result = res.data;
           if (result) {
-            alert('OK BABY!');
+            // alert('Thành công!! Vui lòng chờ xác nhận đơn hàng');
+            toast.success('Thành công!! Vui lòng chờ xác nhận đơn hàng');
             this.context.setMycart([]);
             this.props.navigate('/home');
           } else {
-            alert('SORRY BABY!');
+            // alert('Không thực hiện được tác vụ');
+            toast.warning('Không thực hiện được tác vụ');
           }
         });
       }

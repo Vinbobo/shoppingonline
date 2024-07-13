@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react';
+import {toast} from 'react-toastify';
 
 class Signup extends Component {
   constructor(props) {
@@ -20,19 +21,19 @@ class Signup extends Component {
           <table className="align-center">
             <tbody>
               <tr>
-                <td>Username</td>
+                <td>Tên tài khoản</td>
                 <td><input type="text" value={this.state.txtUsername} onChange={(e) => { this.setState({ txtUsername: e.target.value }) }} /></td>
               </tr>
               <tr>
-                <td>Password</td>
+                <td>Mật khẩu</td>
                 <td><input type="password" value={this.state.txtPassword} onChange={(e) => { this.setState({ txtPassword: e.target.value }) }} /></td>
               </tr>
               <tr>
-                <td>Name</td>
+                <td>Họ và Tên</td>
                 <td><input type="text" value={this.state.txtName} onChange={(e) => { this.setState({ txtName: e.target.value }) }} /></td>
               </tr>
               <tr>
-                <td>Phone</td>
+                <td>Số điện thoại</td>
                 <td><input type="tel" value={this.state.txtPhone} onChange={(e) => { this.setState({ txtPhone: e.target.value }) }} /></td>
               </tr>
               <tr>
@@ -41,7 +42,7 @@ class Signup extends Component {
               </tr>
               <tr>
                 <td></td>
-                <td><input type="submit" value="SIGN-UP" onClick={(e) => this.btnSignupClick(e)} /></td>
+                <td><input type="submit" value="ĐĂNG KÝ" onClick={(e) => this.btnSignupClick(e)} /></td>
               </tr>
             </tbody>
           </table>
@@ -61,14 +62,16 @@ class Signup extends Component {
       const account = { username: username, password: password, name: name, phone: phone, email: email };
       this.apiSignup(account);
     } else {
-      alert('Please input username and password and name and phone and email');
+      // alert('Please input username and password and name and phone and email');
+      toast.warning('Hãy nhập đầy đủ các trường thông tin!!!');
     }
   }
   // apis
   apiSignup(account) {
     axios.post('/api/customer/signup', account).then((res) => {
       const result = res.data;
-      alert(result.message);
+      // alert(result.message);
+      toast.error(result.message);
     });
   }
 }

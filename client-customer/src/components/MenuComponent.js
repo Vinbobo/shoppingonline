@@ -21,18 +21,18 @@ class Menu extends Component {
       <div className="border-bottom">
         <div className="float-left">
           <ul className="menu">
-            <li className="menu"><Link to='/'>Home</Link></li>
-            <li className="menu"><Link to='/gmap'>Gmap</Link></li>
+            <li className="menu"><Link to='/'>TRANG CHỦ</Link></li>
+            <li className="menu"><Link to='/gmap'>VỊ TRÍ CỬA HÀNG</Link></li>
           {cates}
           </ul>
         </div>
         <div style={{display:"inline"}} class="form-switch">
-            <input class="form-check-input" type="checkbox" onChange={(e) => this.cbkChangeMode(e)}/>&nbsp; Light/ Dark mode
+            <input class="form-check-input" type="checkbox" onChange={(e) => this.cbkChangeMode(e)}/>&nbsp; Chế độ sáng/tối
         </div>
         <div className="float-right">
           <form className="search">
-           <input type="search" placeholder="Enter keyword" className="keyword" value={this.state.txtKeyword} onChange={(e) => { this.setState({ txtKeyword: e.target.value }) }} />
-           <input type="submit" value="SEARCH" onClick={(e) => this.btnSearchClick(e)} />
+           <input type="search" placeholder="Nhập sản phẩm cần tìm" className="keyword" value={this.state.txtKeyword} onChange={(e) => { this.setState({ txtKeyword: e.target.value }) }} />
+           <input type="submit" value="TÌM KIẾM" onClick={(e) => this.btnSearchClick(e)} />
           </form>
         </div>
         <div className="float-clear" />

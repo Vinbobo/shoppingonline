@@ -36,12 +36,12 @@ class Home extends Component {
         <Slider/>
         <div style={{height:30}}/>
         <div className="align-center">
-          <h2 className="text-center">NEW PRODUCTS</h2>
+          <h2 className="text-center">SẢN PHẨM MỚI CẬP NHẬT</h2>
           {newprods}
         </div>
         {this.state.hotprods.length > 0 ?
           <div className="align-center">
-            <h2 className="text-center">HOT PRODUCTS</h2>
+            <h2 className="text-center">SẢN PHẨM BÁN CHẠY</h2>
             {hotprods}
           </div>
           : <div />}

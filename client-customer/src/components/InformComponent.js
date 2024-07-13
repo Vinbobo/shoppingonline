@@ -9,13 +9,13 @@ class Inform extends Component {
       <div className="border-bottom">
       <div className="float-left">
         {this.context.token === '' ?
-          <div><Link to='/login'>Login</Link> | <Link to='/signup'>Sign-up</Link> | <Link to='/active'>Active</Link></div>
+          <div><Link to='/login'>Đăng nhập</Link> | <Link to='/signup'>Đăng ký</Link> | <Link to='/active'>Kích hoạt tài khoản</Link></div>
           :
-          <div>Hello <b>{this.context.customer.name}</b> | <Link to='/home' onClick={() => this.lnkLogoutClick()}>Logout</Link> | <Link to='/myprofile'>My profile</Link> | <Link to='/myorders'>My orders</Link></div>
+          <div>Xin chào <b>{this.context.customer.name}</b> | <Link to='/home' onClick={() => this.lnkLogoutClick()}>Đăng xuất</Link> | <Link to='/myprofile'>Thông tin cá nhân</Link> | <Link to='/myorders'>Đơn đặt hàng của tôi</Link></div>
         }
       </div>
       <div className="float-right">
-       <Link to='/mycart'>My cart</Link> have <b>{this.context.mycart.length}</b> items
+       <Link to='/mycart'>Giỏ hàng</Link> có <b>{this.context.mycart.length}</b> sản phẩm
       </div>
         <div className="float-clear" />
       </div>

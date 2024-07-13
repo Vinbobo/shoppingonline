@@ -44,7 +44,7 @@ class Myorders extends Component {
     return (
       <div>
         <div className="align-center">
-          <h2 className="text-center">ORDER LIST</h2>
+          <h2 className="text-center">DANH SÁCH ĐƠN HÀNG</h2>
           <table className="datatable" border="1">
             <tbody>
               <tr className="datatable">
@@ -61,7 +61,7 @@ class Myorders extends Component {
         </div>
         {this.state.order ?
           <div className="align-center">
-            <h2 className="text-center">ORDER DETAIL</h2>
+            <h2 className="text-center">CHI TIẾT ĐƠN HÀNG</h2>
             <table className="datatable" border="1">
               <tbody>
                 <tr className="datatable">

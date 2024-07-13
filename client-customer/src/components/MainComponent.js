@@ -16,7 +16,6 @@ import Myorders from './MyordersComponent';
 import Gmap from './GmapComponent';
 import TawkMessenger from './TawkMessengerComponent'
 import Resetpwd from './ResetpwdComponent';
-import axios from 'axios';
 import MyContext from '../contexts/MyContext';
 class Main extends Component {
   static contextTyp = MyContext;
@@ -41,21 +40,9 @@ class Main extends Component {
           <Route path='/resetpwd' element={<Resetpwd/>}/>
         </Routes>
         <TawkMessenger/>
-        <ToastContainer autoclose={3000}/>
+        <ToastContainer autoclose={1000}/>
       </div>
     );
-  }
-  componentDidMount(){
-    const token = localStorage.getItem('customer_token');
-    if (token) this.apiGetAccount(token);
-  }
-  apiGetAccount(token){
-    const config = {headers:{'x-access-token':token}};
-    axios.get('/api/customer/account',config).then((res)=>{
-      const result = res.data;
-      this.context.setToken(token);
-      this.context.setCustomer(result);
-    })
   }
 }
 export default Main;

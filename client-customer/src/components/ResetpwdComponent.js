@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, {Component} from 'react';
-
+import {toast} from 'react-toastify';
 class Resetpwd extends Component{
     constructor(props){
         super(props);
@@ -14,7 +14,7 @@ class Resetpwd extends Component{
     render(){
         return(
             <div className='align-center'>
-                <h2 className='text-center'>RESET PASSWORD</h2>
+                <h2 className='text-center'>THAY ĐỔI MẬT KHẨU</h2>
                 <form>
                     <table className='align-center'>
                         <tbody>
@@ -35,7 +35,7 @@ class Resetpwd extends Component{
                                 <td><input type='text'value={this.state.txtToken}onChange={(e)=>{this.setState({txtToken:e.target.value})}}/></td>
                             </tr>
                             <tr>
-                                <td>New password</td>
+                                <td>Mật khẩu mới</td>
                                 <td><input type='text'value={this.state.txtPassword}onChange={(e)=>{this.setState({txtPassword:e.target.value})}}/></td>
                             </tr>
                             <tr>
@@ -55,7 +55,8 @@ class Resetpwd extends Component{
         if (email){
             this.apiSendmail(email);
         }else{
-            alert('Please input email');
+            // alert('Please input email');
+            toast.warning('Email không được để trống');
         }
     }   
     btnResetClick(e){
@@ -66,13 +67,15 @@ class Resetpwd extends Component{
         if (id && token && password){
             this.apiResetpwd(id,token,password);
         }else{
-            alert('Please input id and token and password');
+            // alert('Please input id and token and password');
+            toast.warning('Các trường thông tin không được để trống!!');
         }
     }
     apiSendmail(email){
         axios.get('/api/customer/sendmail/'+email).then((res)=>{
             const result = res.data;
-            alert(result.message);
+            // alert(result.message);
+            toast.error(result.message);
         });
     }
     apiResetpwd(id,token,password){
@@ -80,9 +83,10 @@ class Resetpwd extends Component{
         axios.post('/api/customer/resetpwd',body).then((res)=>{
             const result = res.data;
             if(result){
-                alert("OK BABY!");
+                // alert("OK BABY!");
+                toast.success('Mật khẩu mới cập nhật thành công!!');
             }else{
-                alert("SORRY BABY!");
+                toast.warning('Mật khẩu mới cập nhật không thành công!!');
             }
         });
     }
