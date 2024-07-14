@@ -43,7 +43,7 @@ class Product extends Component {
     return (
       <div>
         <div className="float-left">
-          <h2 className="text-center">PRODUCT LIST</h2>
+          <h2 className="text-center">DANH SÁCH SẢN PHẨM</h2>
           <table className="datatable" border="1">
             <tbody>
               <tr className="datatable">

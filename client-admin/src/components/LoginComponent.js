@@ -20,16 +20,16 @@ class Login extends Component {
             <table className="align-center">
               <tbody>
                 <tr>
-                  <td>Username</td>
+                  <td>Tên tài khoản</td>
                   <td><input type="text" value={this.state.txtUsername} onChange={(e) => { this.setState({ txtUsername: e.target.value }) }} /></td>
                 </tr>
                 <tr>
-                  <td>Password</td>
+                  <td>Mật khẩu</td>
                   <td><input type="password" value={this.state.txtPassword} onChange={(e) => { this.setState({ txtPassword: e.target.value }) }} /></td>
                 </tr>
                 <tr>
                   <td></td>
-                  <td><input type="submit" value="LOGIN" onClick={(e) => this.btnLoginClick(e)} /></td>
+                  <td><input type="submit" value="ĐĂNG NHẬP" onClick={(e) => this.btnLoginClick(e)} /></td>
                 </tr>
               </tbody>
             </table>
@@ -48,7 +48,7 @@ class Login extends Component {
       const account = { username: username, password: password };
       this.apiLogin(account);
     } else {
-      alert('Please input username and password');
+      alert('Vui lòng nhập tên và mật khẩu');
     }
   }
   // apis

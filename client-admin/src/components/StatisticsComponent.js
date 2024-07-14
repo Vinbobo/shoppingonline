@@ -23,42 +23,42 @@ class Statistics extends Component{
                 <table className="align-center">
                     <tbody>
                         <tr>
-                            <td align="right">No.Categories</td>
+                            <td align="right">Số lượng danh mục</td>
                             <td></td>
                             <td>{this.state.noCategories}</td>
                         </tr>
                         <tr>
-                            <td align="right">No.Products</td>
+                            <td align="right">Số lượng sản phẩm:</td>
                             <td></td>
                             <td>{this.state.noProducts}</td>
                         </tr>
                         <tr>
-                            <td align="right">No.Orders</td>
+                            <td align="right">Số đơn đặt hàng:</td>
                             <td></td>
                             <td>{this.state.noOrders}</td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td align='right'>Pending &ensp;</td>
+                            <td align='right'>Số đơn hàng chờ duyệt: &ensp;</td>
                             <td>{this.state.noOrdersPending}</td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td align='right'>Approved &ensp;</td>
+                            <td align='right'>Số đơn hàng đã duyệt: &ensp;</td>
                             <td>{this.state.noOrdersApproved}</td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td align='right'>Canceled &ensp;</td>
+                            <td align='right'>Số đơn hàng đã hủy: &ensp;</td>
                             <td>{this.state.noOrdersCanceled}</td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td align='right'>Revenue &ensp;</td>
+                            <td align='right'>Doanh thu: &ensp;</td>
                             <td>{this.state.noOrdersRevenue}</td>
                         </tr>
                         <tr>
-                            <td align='right'>No.Customers</td>
+                            <td align='right'>Số lượng tài khoản khách:</td>
                             <td></td>
                             <td>{this.state.noCustomers}</td>
                         </tr>

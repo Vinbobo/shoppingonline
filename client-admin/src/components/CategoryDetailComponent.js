@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import MyContext from '../contexts/MyContext';
-
 class CategoryDetail extends Component {
   static contextType = MyContext; // using this.context to access global state
   constructor(props) {
@@ -29,9 +28,9 @@ class CategoryDetail extends Component {
               <tr>
                 <td></td>
                 <td>
-                <input type="submit" value="ADD NEW" onClick={(e) => this.btnAddClick(e)} />
-                <input type="submit" value="UPDATE" onClick={(e) => this.btnUpdateClick(e)} />
-                <input type="submit" value="DELETE" onClick={(e) => this.btnDeleteClick(e)} />
+                <input type="submit" value="THÊM" onClick={(e) => this.btnAddClick(e)} />
+                <input type="submit" value="CẬP NHẬT" onClick={(e) => this.btnUpdateClick(e)} />
+                <input type="submit" value="XÓA" onClick={(e) => this.btnDeleteClick(e)} />
                 </td>
               </tr>
             </tbody>
@@ -48,7 +47,7 @@ class CategoryDetail extends Component {
         const cate = { name: name };
         this.apiPostCategory(cate);
       } else {
-        alert('Please input name');
+        alert('Vui lòng nhập tên danh mục!!');
       }
     }
     // apis
@@ -57,10 +56,10 @@ class CategoryDetail extends Component {
       axios.post('/api/admin/categories', cate, config).then((res) => {
         const result = res.data;
         if (result) {
-          alert('OK BABY!');
+          alert('Thêm thành công!');
           this.apiGetCategories();
         } else {
-          alert('SORRY BABY!');
+          alert('Không thành công!');
         }
       });
     }
@@ -73,7 +72,7 @@ class CategoryDetail extends Component {
         const cate = { name: name };
         this.apiPutCategory(id, cate);
       } else {
-        alert('Please input id and name');
+        alert('Vui lòng nhập id và tên!!');
       }
     }
     // apis
@@ -82,10 +81,10 @@ class CategoryDetail extends Component {
       axios.put('/api/admin/categories/' + id, cate, config).then((res) => {
         const result = res.data;
         if (result) {
-          alert('OK BABY!');
+          alert('CẬP NHẬT THÀNH CÔNG!');
           this.apiGetCategories();
         } else {
-          alert('SORRY BABY!');
+          alert('KHÔNG THÀNH CÔNG!');
         }
       });
     }
@@ -99,12 +98,12 @@ class CategoryDetail extends Component {
       // event-handlers
   btnDeleteClick(e) {
     e.preventDefault();
-    if (window.confirm('ARE YOU SURE?')) {
+    if (window.confirm('BẠN CÓ MUỐN XÓA DANH MỤC?')) {
       const id = this.state.txtID;
       if (id) {
         this.apiDeleteCategory(id);
       } else {
-        alert('Please input id');
+        alert('Vui lòng nhập id');
       }
     }
   }
@@ -114,10 +113,10 @@ class CategoryDetail extends Component {
     axios.delete('/api/admin/categories/' + id, config).then((res) => {
       const result = res.data;
       if (result) {
-        alert('OK BABY!');
+        alert('CẬP NHẬT THÀNH CÔNG!');
         this.apiGetCategories();
       } else {
-        alert('SORRY BABY!');
+        alert('KHÔNG THÀNH CÔNG!');
       }
     });
   }

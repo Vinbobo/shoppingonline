@@ -8,17 +8,17 @@ class Menu extends Component {
       <div className="border-bottom">
         <div className="float-left">
           <ul className="menu">
-            <li className="menu"><Link to='/admin/home'>Home</Link></li>
-            <li className="menu"><Link to='/admin/category'>Category</Link></li>
-            <li className="menu"><Link to='/admin/product'>Product</Link></li>
-            <li className="menu"><Link to='/admin/order'>Order</Link></li>
-            <li className="menu"><Link to='/admin/customer'>Customer</Link></li>
-            <li className="menu"><Link to ='/admin/statistics'>Statistics</Link></li>
+            <li className="menu"><Link to='/admin/home'>Trang chủ</Link></li>
+            <li className="menu"><Link to='/admin/category'>Danh mục sản phẩm</Link></li>
+            <li className="menu"><Link to='/admin/product'>Sản phẩm</Link></li>
+            <li className="menu"><Link to='/admin/order'>Đơn đặt hàng</Link></li>
+            <li className="menu"><Link to='/admin/customer'>Tài khoản khách</Link></li>
+            <li className="menu"><Link to ='/admin/statistics'>Thống kê</Link></li>
           </ul>
         </div>
         <div className="float-right">
           Hello <b>{this.context.username}</b> |
-          <Link to='/admin/home' onClick={() => this.lnkLogoutClick()}>Logout</Link>
+          <Link to='/admin/home' onClick={() => this.lnkLogoutClick()}>Đăng xuất</Link>
         </div>
         <div className="float-clear" />
       </div>

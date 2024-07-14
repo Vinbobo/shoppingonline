@@ -26,7 +26,7 @@ class ProductDetail extends Component {
     });
     return (
       <div className="float-right">
-        <h2 className="text-center">PRODUCT DETAIL</h2>
+        <h2 className="text-center">CHI TIẾT SẢN PHẨM</h2>
         <form>
           <table>
             <tbody>
@@ -121,10 +121,10 @@ class ProductDetail extends Component {
     axios.delete('/api/admin/products/' + id, config).then((res) => {
       const result = res.data;
       if (result) {
-        alert('OK BABY!');
+        alert('XÓA THÀNH CÔNG!');
         this.apiGetProducts();
       } else {
-        alert('SORRY BABY!');
+        alert('THẤT BẠI!');
       }
     });
   }
@@ -133,10 +133,10 @@ class ProductDetail extends Component {
     axios.post('/api/admin/products', prod, config).then((res) => {
       const result = res.data;
       if (result) {
-        alert('OK BABY!');
+        alert('THÊM THÀNH CÔNG!');
         this.apiGetProducts();
       } else {
-        alert('SORRY BABY!');
+        alert('THẤT BẠI!');
       }
     });
   }
@@ -161,10 +161,10 @@ class ProductDetail extends Component {
     axios.put('/api/admin/products/' + id, prod, config).then((res) => {
       const result = res.data;
       if (result) {
-        alert('OK BABY!');
+        alert('HÌNH ẢNH CHI TIẾT ĐÃ ĐƯỢC CẬP NHẬT!');
         this.apiGetProducts();
       } else {
-        alert('SORRY BABY!');
+        alert('KHÔNG THÀNH CÔNG!');
       }
     });
   } 
