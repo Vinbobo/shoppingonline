@@ -19,7 +19,7 @@ class Statistics extends Component{
     render(){
         return(
             <div className="text-center">
-                <h2 className="text-center">STATISTICS</h2>
+                <h2 className="text-center">THỐNG KÊ</h2>
                 <table className="align-center">
                     <tbody>
                         <tr>
