@@ -24,12 +24,12 @@ class Category extends Component {
     return (
       <div>
         <div className="float-left">
-          <h2 className="text-center">CATEGORY LIST</h2>
+          <h2 className="text-center">DANH SÁCH DANH MỤC</h2>
           <table className="datatable" border="1">
             <tbody>
               <tr className="datatable">
                 <th>ID</th>
-                <th>Name</th>
+                <th>Tên</th>
               </tr>
               {cates}
             </tbody>
