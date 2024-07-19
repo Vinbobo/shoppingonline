@@ -62,15 +62,15 @@ class Customer extends Component {
     return (
       <div>
         <div className="align-center">
-          <h2 className="text-center">CUSTOMER LIST</h2>
+          <h2 className="text-center">DANH SÁCH KHÁCH HÀNG</h2>
           <table className="datatable" border="1">
             <tbody>
               <tr className="datatable">
                 <th>ID</th>
-                <th>Username</th>
-                <th>Password</th>
-                <th>Name</th>
-                <th>Phone</th>
+                <th>Tên tài khoản</th>
+                <th>Mật khẩu</th>
+                <th>Họ tên</th>
+                <th>SĐT</th>
                 <th>Email</th>
                 <th>Active</th>
                 <th>Action</th>
@@ -81,16 +81,16 @@ class Customer extends Component {
         </div>
         {this.state.orders.length > 0 ?
           <div className="align-center">
-            <h2 className="text-center">ORDER LIST</h2>
+            <h2 className="text-center">DANH SÁCH ĐƠN HÀNG</h2>
             <table className="datatable" border="1">
               <tbody>
                 <tr className="datatable">
                   <th>ID</th>
-                  <th>Creation date</th>
+                  <th>Ngày tạo</th>
                   <th>Cust.name</th>
                   <th>Cust.phone</th>
-                  <th>Total</th>
-                  <th>Status</th>
+                  <th>Tổng tiền</th>
+                  <th>Trạng thái</th>
                 </tr>
                 {orders}
               </tbody>
@@ -99,15 +99,15 @@ class Customer extends Component {
           : <div />}
         {this.state.order ?
           <div className="align-center">
-            <h2 className="text-center">ORDER DETAIL</h2>
+            <h2 className="text-center">CHI TIẾT ĐƠN HÀNG</h2>
             <table className="datatable" border="1">
               <tbody>
                 <tr className="datatable">
                   <th>No.</th>
                   <th>Prod.ID</th>
                   <th>Prod.name</th>
-                  <th>Image</th>
-                  <th>Price</th>
+                  <th>Hình ảnh</th>
+                  <th>Giá</th>
                   <th>Quantity</th>
                   <th>Amount</th>
                 </tr>
