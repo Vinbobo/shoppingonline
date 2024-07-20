@@ -75,7 +75,7 @@ class Order extends Component {
                   <th>Image</th>
                   <th>Giá tiền</th>
                   <th>Số lượng</th>
-                  <th>Amount</th>
+                  <th>Tổng tiền</th>
                 </tr>
                 {items}
               </tbody>
