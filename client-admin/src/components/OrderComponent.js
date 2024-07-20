@@ -52,11 +52,11 @@ class Order extends Component {
             <tbody>
               <tr className="datatable">
                 <th>ID</th>
-                <th>Creation date</th>
+                <th>Ngày tạo đơn</th>
                 <th>Cust.name</th>
                 <th>Cust.phone</th>
-                <th>Total</th>
-                <th>Status</th>
+                <th>Tổng tiền</th>
+                <th>Trạng thái</th>
                 <th>Action</th>
               </tr>
               {orders}
@@ -73,8 +73,8 @@ class Order extends Component {
                   <th>Prod.ID</th>
                   <th>Prod.name</th>
                   <th>Image</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
+                  <th>Giá tiền</th>
+                  <th>Số lượng</th>
                   <th>Amount</th>
                 </tr>
                 {items}
