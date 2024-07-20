@@ -72,7 +72,7 @@ class Order extends Component {
                   <th>No.</th>
                   <th>Prod.ID</th>
                   <th>Prod.name</th>
-                  <th>Image</th>
+                  <th>Hình ảnh</th>
                   <th>Giá tiền</th>
                   <th>Số lượng</th>
                   <th>Tổng tiền</th>
