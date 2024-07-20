@@ -108,8 +108,8 @@ class Customer extends Component {
                   <th>Prod.name</th>
                   <th>Hình ảnh</th>
                   <th>Giá</th>
-                  <th>Quantity</th>
-                  <th>Amount</th>
+                  <th>Số lượng</th>
+                  <th>Tổng tiền</th>
                 </tr>
                 {items}
               </tbody>
