@@ -24,7 +24,7 @@ class Product extends Component {
     });
     return (
       <div className="text-center">
-        <h2 className="text-center">LIST PRODUCTS</h2>
+        <h2 className="text-center">DANH SÁCH CÁC SẢN PHẨM</h2>
         <div>
           <select value={this.state.sort} onChange={(e) => {this.setState({sort:e.target.value    
           }); this.cmbSortChange(e.target.value);}}>
