@@ -35,31 +35,31 @@ class ProductDetail extends Component {
                 <td><input type="text" value={this.state.txtID} onChange={(e) => { this.setState({ txtID: e.target.value }) }} readOnly={true} /></td>
               </tr>
               <tr>
-                <td>Name</td>
+                <td>Tên sản phẩm</td>
                 <td><input type="text" value={this.state.txtName} onChange={(e) => { this.setState({ txtName: e.target.value }) }} /></td>
               </tr>
               <tr>
-                <td>Price</td>
+                <td>Giá</td>
                 <td><input type="text" value={this.state.txtPrice} onChange={(e) => { this.setState({ txtPrice: e.target.value }) }} /></td>
               </tr>
               <tr>
-                <td>Image</td>
+                <td>Hình ảnh minh hoạ</td>
                 <td><input type="file" name="fileImage" accept="image/jpeg, image/png, image/gif" onChange={(e) => this.previewImage(e)} /></td>
               </tr>
               <tr>
-                <td>Image details</td>
+                <td>Hình ảnh chi tiết</td>
                 <td><input type="file" name="fileImage" accept="image/jpeg, image/png, image/gif" onChange={(e) => this.previewImageDetails(e)} multiple /></td>
               </tr>
               <tr>
-                <td>Category</td>
+                <td>Danh mục</td>
                 <td><select onChange={(e) => { this.setState({ cmbCategory: e.target.value }) }}>{cates}</select></td>
               </tr>
               <tr>
                 <td></td>
                 <td>
-                  <input type="submit" value="ADD NEW" onClick={(e) => this.btnAddClick(e)} />
-                  <input type="submit" value="UPDATE" onClick={(e) => this.btnUpdateClick(e)} />
-                  <input type="submit" value="DELETE" onClick={(e) => this.btnDeleteClick(e)} />
+                  <input type="submit" value="THÊM MỚI" onClick={(e) => this.btnAddClick(e)} />
+                  <input type="submit" value="CẬP NHẬT" onClick={(e) => this.btnUpdateClick(e)} />
+                  <input type="submit" value="XOÁ" onClick={(e) => this.btnDeleteClick(e)} />
                   </td>
               </tr>
               <tr>
