@@ -24,7 +24,7 @@ class Resetpwd extends Component{
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><input type='sumbit'value="SEND EMAIL" onClick={(e) => this.btnEmailClick(e)}/></td>
+                                <td><input type='sumbit' value="SEND EMAIL" onClick={(e) => this.btnEmailClick(e)}/></td>
                             </tr>
                             <tr>
                                 <td>ID</td>
