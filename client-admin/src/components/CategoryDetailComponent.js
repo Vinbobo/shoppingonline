@@ -13,7 +13,7 @@ class CategoryDetail extends Component {
   render() {
     return (
       <div className="float-right">
-        <h2 className="text-center">CATEGORY DETAIL</h2>
+        <h2 className="text-center">CHI TIẾT DANH MỤC</h2>
         <form>
           <table>
             <tbody>
