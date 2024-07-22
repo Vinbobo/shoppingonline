@@ -83,6 +83,6 @@ tr:not(:first-child):nth-child(odd).datatable {
 }
 /* except header */
 tr:not(:first-child):hover.datatable {
-  background-color: #ded587
+  background-color: #ded587;
   cursor: pointer;
 }
