@@ -33,7 +33,7 @@ figure.caption-right {
 }
 span.link {
   cursor: pointer;
-  color: blue;
+  color: red;
   text-decoration: underline;
 }
 /* menu.css */
@@ -72,7 +72,7 @@ input.keyword {
 }
 /* header */
 tr:first-child.datatable {
-  background-color: #ffcc00;
+  background-color: #05cbf7;
 }
 /* even rows, except header */
 tr:not(:first-child):nth-child(even).datatable {
@@ -80,10 +80,10 @@ tr:not(:first-child):nth-child(even).datatable {
 }
 /* odd rows, except header */
 tr:not(:first-child):nth-child(odd).datatable {
-  background-color: #ffeeaa;
+  background-color: #76def5;
 }
 /* except header */
 tr:not(:first-child):hover.datatable {
-  background-color: #dcfcfc;
+  background-color: #ded587;
   cursor: pointer;
 }
