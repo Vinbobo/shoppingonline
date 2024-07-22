@@ -33,8 +33,7 @@ figure.caption-right {
 }
 span.link {
   cursor: pointer;
-  color: blue;
-  text-decoration: underline;
+  color: red;
 }
 /* menu.css */
 div.border-bottom {
