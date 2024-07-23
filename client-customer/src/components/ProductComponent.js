@@ -61,7 +61,7 @@ class Product extends Component {
     if (sort === 'nameASC'){
       this.state.products.sort((a,b)=>a.name.localeCompare(b.name));
     }else if (sort === 'nameDESC'){
-      this.state.products.sort((a,b)=>a.name.localeCompare(a.name));
+      this.state.products.sort((a,b)=>b.name.localeCompare(a.name));
     }else if (sort === 'priceASC'){
       this.state.products.sort((a,b)=>a.price - b.price);
     }else if (sort === 'priceDESC'){
