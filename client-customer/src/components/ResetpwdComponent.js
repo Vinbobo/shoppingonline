@@ -20,27 +20,27 @@ class Resetpwd extends Component{
                         <tbody>
                             <tr>
                                 <td>Email</td>
-                                <td><input type='text'value={this.state.txtEmail} onChange={(e)=>{this.setState({txtEmail:e.target.value})}}/></td>
+                                <td><input type="text" value={this.state.txtEmail} onChange={(e)=>{this.setState({txtEmail:e.target.value})}}/></td>
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><input type='sumbit' value="SEND EMAIL" onClick={(e) => this.btnEmailClick(e)}/></td>
+                                <td><input type="sumbit" value="SEND EMAIL" onClick={(e) => this.btnEmailClick(e)}/></td>
                             </tr>
                             <tr>
                                 <td>ID</td>
-                                <td><input type='text'value={this.state.txtID} onChange={(e)=>{this.setState({txtID:e.state.value})}}/></td>
+                                <td><input type="text" value={this.state.txtID} onChange={(e)=>{this.setState({txtID:e.state.value})}}/></td>
                             </tr>
                             <tr>
                                 <td>Token</td>
-                                <td><input type='text'value={this.state.txtToken}onChange={(e)=>{this.setState({txtToken:e.target.value})}}/></td>
+                                <td><input type="text"value={this.state.txtToken}onChange={(e)=>{this.setState({txtToken:e.target.value})}}/></td>
                             </tr>
                             <tr>
                                 <td>Mật khẩu mới</td>
-                                <td><input type='text'value={this.state.txtPassword}onChange={(e)=>{this.setState({txtPassword:e.target.value})}}/></td>
+                                <td><input type="password" value={this.state.txtPassword}onChange={(e)=>{this.setState({txtPassword:e.target.value})}}/></td>
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><input type='sumbit'value="RESET" onClick={(e)=>this.btnResetClick(e)}/></td>
+                                <td><input type="sumbit" value="RESET" onClick={(e)=>this.btnResetClick(e)}/></td>
                             </tr>
                         </tbody>
                     </table>
