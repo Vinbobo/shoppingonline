@@ -28,7 +28,7 @@ class Resetpwd extends Component{
                             </tr>
                             <tr>
                                 <td>ID</td>
-                                <td><input type="text" value={this.state.txtID} onChange={(e)=>{this.setState({txtID:e.state.value})}}/></td>
+                                <td><input type="text" value={this.state.txtID} onChange={(e)=>{this.setState({txtID:e.target.value})}}/></td>
                             </tr>
                             <tr>
                                 <td>Token</td>
